@@ -10,9 +10,9 @@ const AuthenticatedComponent = dynamic(() =>
 );
 
 export default function Profile() {
-  const [session, loading] = useSession();
+  const { data: session } = useSession();
 
-  if (typeof window !== "undefined" && loading) return <p>Loading...</p>;
+  // if (typeof window !== "undefined" && loading) return <p>Loading...</p>;
 
   if (!session) return <UnauthenticatedComponent />;
 
